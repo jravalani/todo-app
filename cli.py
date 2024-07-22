@@ -3,8 +3,11 @@ import functions
 import time
 
 current_time = time.strftime("%b %d, %Y %H:%M:%S")
-print("The time is below: ")
+# print("The time is below: ")
 print(f"It is {current_time}")
+
+user_name = 'Jay'
+
 while True:
     user_action = input("Type add, show, edit, complete, or exit: ")
     user_action = user_action.strip()
@@ -25,9 +28,9 @@ while True:
     elif user_action.startswith("show"):
         todos = functions.get_todos()
         print(todos)
-        for index, x in enumerate(todos):
-            x = x.strip('\n')
-            print(f"{index + 1}. {x}")
+        for n, each_todo in enumerate(todos):
+            each_todo = each_todo.strip('\n')
+            print(f"{n + 1}. {each_todo}")
 
     elif user_action.startswith("edit"):
         try:
